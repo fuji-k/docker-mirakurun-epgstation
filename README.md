@@ -57,7 +57,6 @@ echo 'SUBSYSTEM=="video13",GROUP="video",MODE="0666"' | sudo tee -a /etc/udev/ru
 echo 'SUBSYSTEM=="video14",GROUP="video",MODE="0666"' | sudo tee -a /etc/udev/rules.d/10-v4l2-permissions.rules
 echo 'SUBSYSTEM=="video15",GROUP="video",MODE="0666"' | sudo tee -a /etc/udev/rules.d/10-v4l2-permissions.rules
 echo 'SUBSYSTEM=="video16",GROUP="video",MODE="0666"' | sudo tee -a /etc/udev/rules.d/10-v4l2-permissions.rules
-echo 'SUBSYSTEM=="video19",GROUP="video",MODE="0666"' | sudo tee -a /etc/udev/rules.d/10-v4l2-permissions.rules
 echo "options px4_drv xfer_packets=51 urb_max_packets=816 max_urbs=6" | sudo tee /etc/modprobe.d/px4_drv.conf
 ```
 
