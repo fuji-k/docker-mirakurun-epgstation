@@ -1,0 +1,64 @@
+version: '3'
+services:
+    mirakurun:
+        build:
+            context: mirakurun
+        container_name: mirakurun
+        cap_add:
+            - SYS_ADMIN
+            - SYS_NICE
+        ports:
+            - "40772:40772"
+            - "9229:9229"
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ./mirakurun/conf:/usr/local/etc/mirakurun
+            - ./mirakurun/db:/usr/local/var/db/mirakurun
+        environment:
+            TZ: "Asia/Tokyo"
+        devices:
+            - /dev/px4video0:/dev/px4video0
+            - /dev/px4video1:/dev/px4video1
+            - /dev/px4video2:/dev/px4video2
+            - /dev/px4video3:/dev/px4video3
+            - /dev/bus:/dev/bus
+        restart: always
+        logging:
+            driver: json-file
+            options:
+                max-file: "1"
+                max-size: 10m
+
+    epgstation:
+        build:
+            context: epgstation
+        container_name: epgstation
+        volumes:
+            - /etc/passwd:/etc/passwd:ro
+            - /etc/localtime:/etc/localtime:ro
+            - ./epgstation/config:/usr/local/EPGStation/config
+            - ./epgstation/data:/usr/local/EPGStation/data
+            - ./epgstation/thumbnail:/usr/local/EPGStation/thumbnail
+            - ./epgstation/logs:/usr/local/EPGStation/logs
+            - ./recorded:/usr/local/EPGStation/recorded
+            - /dev/video10:/dev/video10
+            - /dev/video11:/dev/video11
+            - /dev/video12:/dev/video12
+            - /dev/video13:/dev/video13
+            - /dev/video14:/dev/video14
+            - /dev/video15:/dev/video15
+            - /dev/video16:/dev/video16
+            - /dev/vchiq:/dev/vchiq
+        environment:
+            TZ: "Asia/Tokyo"
+        links:
+            - mirakurun:mirakurun
+        ports:
+            - "8888:8888"
+            - "8889:8889"
+        restart: always
+        logging:
+            driver: json-file
+            options:
+                max-file: "1"
+                max-size: 10m
