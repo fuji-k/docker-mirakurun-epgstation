@@ -4,6 +4,7 @@ services:
         build:
             context: mirakurun
         container_name: mirakurun
+        privileged: true
         cap_add:
             - SYS_ADMIN
             - SYS_NICE
@@ -14,6 +15,7 @@ services:
             - /etc/localtime:/etc/localtime:ro
             - ./mirakurun/conf:/usr/local/etc/mirakurun
             - ./mirakurun/db:/usr/local/var/db/mirakurun
+            - ./mirakurun/npmlogs:/root/.npm
         environment:
             TZ: "Asia/Tokyo"
         devices:
@@ -33,6 +35,7 @@ services:
         build:
             context: epgstation
         container_name: epgstation
+        privileged: true
         volumes:
             - /etc/passwd:/etc/passwd:ro
             - /etc/localtime:/etc/localtime:ro
@@ -40,6 +43,7 @@ services:
             - ./epgstation/data:/usr/local/EPGStation/data
             - ./epgstation/thumbnail:/usr/local/EPGStation/thumbnail
             - ./epgstation/logs:/usr/local/EPGStation/logs
+            - ./epgstation/upload:/usr/local/EPGStation/upload
             - ./recorded:/usr/local/EPGStation/recorded
             - /dev/video10:/dev/video10
             - /dev/video11:/dev/video11
@@ -62,3 +66,4 @@ services:
             options:
                 max-file: "1"
                 max-size: 10m
+
