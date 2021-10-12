@@ -1,4 +1,4 @@
-FROM node:16-buster-slim
+FROM node:14-buster-slim
 EXPOSE 8888
 ENV DOCKER="YES"
 ENV DEV="autoconf automake build-essential cmake git-core pkg-config texinfo curl wget python python3 unzip libtool nasm yasm gzip gperf uuid-dev gettext autopoint"
