@@ -2,13 +2,14 @@ docker-mirakurun-epgstationv2-rpi4
 ====
 
 [Mirakurun](https://github.com/Chinachu/Mirakurun) + [EPGStation](https://github.com/l3tnun/EPGStation) の Raspberry Pi4 用 Docker コンテナ
-[ykym氏](https://github.com/ykym/docker-mirakurun-epgstation-rpi)のdocker-mirakurun-epgstation-rpiをrpi4でRPiOS32bitを利用しPLEX PX-W3U4に固定し最新版のmirakurun、epgstationv2を登録できるようにしてみました。
+[ykym氏](https://github.com/ykym/docker-mirakurun-epgstation-rpi)のdocker-mirakurun-epgstation-rpiをrpi4でRPiOS32bit(Raspbian GNU/Linux 10 (buster))を利用しPLEX PX-W3U4に固定し最新版のmirakurun、epgstationv2を登録できるようにしてみました。
+またJoinLogoScpTrialSetLinuxを導入しました。Logo.zipを適宜設置してからビルドするとエンコード時MKVを選択する事で自動ＣＭカットが可能となります。
 
 ## 構築例
 
 Raspberry Pi 構築
 
-### buster lite イメージを SDカードに dd
+### buster lite イメージを SDカードに dd (blueeysでは未検証です)
 https://www.raspberrypi.org/downloads/raspbian/
 
 （デスクトップ環境が欲しかったら with desktop）
@@ -96,6 +97,10 @@ sudo reboot
 cd
 git clone http://github.com/thik98/docker-mirakurun-epgstationv2-rpi4.git dmer
 cd dmer
+
+ここでチャンネルロゴをzipで固めたファイルlogo.zipをepgstationに置いて下さい。
+これが無いとエラーで止まります。これはJoinLogoScpTrialSetLinuxで
+自動的にCMカットを行う為に必要なファイルになります。
 
 sudo docker-compose build
 ```

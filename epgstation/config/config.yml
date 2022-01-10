@@ -76,6 +76,25 @@ stream:
                       -vb 1500k 
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof 
                       -y -f mp4 pipe:1'
+            hls:
+                - name: 720p
+                  cmd:
+                      '%FFMPEG% -re -dual_mono_mode main -fix_sub_duration 
+                      -i pipe:0 -threads 0 -ignore_unknown 
+                      -max_muxing_queue_size 1024 -f hls -hls_time 3 
+                      -hls_list_size 0 -hls_allow_cache 1 
+                      -hls_segment_filename %streamFileDir%/stream%streamNum%-%09d.ts -hls_flags delete_segments 
+                      -c:a aac -ar 48000 -b:a 192k -ac 2 -c:v h264_omx 
+                      -vf scale=1280:720 -b:v 3000k -c:s webvtt -master_pl_name stream%streamNum%.m3u8 %streamFileDir%/stream%streamNum%-child.m3u8'
+                - name: 480p
+                  cmd:
+                      '%FFMPEG% -re -dual_mono_mode main -fix_sub_duration 
+                      -i pipe:0 -threads 0 -ignore_unknown 
+                      -max_muxing_queue_size 1024 -f hls -hls_time 3 
+                      -hls_list_size 0 -hls_allow_cache 1 
+                      -hls_segment_filename %streamFileDir%/stream%streamNum%-%09d.ts -hls_flags delete_segments 
+                      -c:a aac -ar 48000 -b:a 192k -ac 2 -c:v h264_omx 
+                      -vf scale=854:480 -b:v 3000k -c:s webvtt -master_pl_name stream%streamNum%.m3u8 %streamFileDir%/stream%streamNum%-child.m3u8'
 
     recorded:
         ts:
@@ -92,6 +111,25 @@ stream:
                       -c:a aac -ar 48000 -b:a 128k -ac 2 -c:v h264_omx 
                       -vf scale=-2:480 -b:v 1500k -movflags frag_keyframe+empty_moov+faststart+default_base_moof 
                       -y -f mp4 pipe:1'
+            hls:
+                - name: 720p
+                  cmd:
+                      '%FFMPEG% -re -dual_mono_mode main -fix_sub_duration 
+                      -i pipe:0 -threads 0 -ignore_unknown 
+                      -max_muxing_queue_size 1024 -f hls -hls_time 3 
+                      -hls_list_size 0 -hls_allow_cache 1 
+                      -hls_segment_filename %streamFileDir%/stream%streamNum%-%09d.ts -hls_flags delete_segments 
+                      -c:a aac -ar 48000 -b:a 192k -ac 2 -c:v h264_omx 
+                      -vf scale=1280:720 -b:v 3000k -c:s webvtt -master_pl_name stream%streamNum%.m3u8 %streamFileDir%/stream%streamNum%-child.m3u8'
+                - name: 480p
+                  cmd:
+                      '%FFMPEG% -re -dual_mono_mode main -fix_sub_duration 
+                      -i pipe:0 -threads 0 -ignore_unknown 
+                      -max_muxing_queue_size 1024 -f hls -hls_time 3 
+                      -hls_list_size 0 -hls_allow_cache 1 
+                      -hls_segment_filename %streamFileDir%/stream%streamNum%-%09d.ts -hls_flags delete_segments 
+                      -c:a aac -ar 48000 -b:a 192k -ac 2 -c:v h264_omx 
+                      -vf scale=854:480 -b:v 3000k -c:s webvtt -master_pl_name stream%streamNum%.m3u8 %streamFileDir%/stream%streamNum%-child.m3u8'
 
     encoded:
             mp4:

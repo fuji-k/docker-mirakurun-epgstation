@@ -150,7 +150,7 @@ RUN apt-get update && \
 # install EPGStation
 \
     cd /usr/local/ && \
-    git clone https://github.com/l3tnun/EPGStation.git && \
+    git -C EPGStation pull 2> /dev/null || git clone https://github.com/l3tnun/EPGStation.git -b v2.6.18 && \
     cd /usr/local/EPGStation && \
     npm run all-install && \
     npm run build && \
