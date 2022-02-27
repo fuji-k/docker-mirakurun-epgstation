@@ -20,7 +20,8 @@ epgUpdateIntervalTime: 10
 conflictPriority: 1
 recPriority: 2
 
-recordedFormat: '%YEAR%年%MONTH%月%DAY%日%HOUR%時%MIN%分%SEC%秒-%TITLE%'
+#recordedFormat: '%YEAR%年%MONTH%月%DAY%日%HOUR%時%MIN%分%SEC%秒-%TITLE%'
+recordedFormat: '%TITLE% [%CHNAME%] [%YEAR%%MONTH%%DAY%-%HOUR%%MIN%]'
 recordedFileExtension: .ts
 recorded:
     - name: recorded
@@ -39,12 +40,16 @@ dropLog: '%ROOT%/recorded/droplog'
 encodeProcessNum: 4
 concurrentEncodeNum: 1
 encode:
+    - name: amatsukaze
+      cmd: '/bin/bash %ROOT%/config/qsvenc.sh'
+      suffix: .mkv
+      rate: 4.0
     - name: MP4
       cmd: '%NODE% %ROOT%/config/enc.js'
       suffix: .mp4
       rate: 4.0
-    - name: MKV
-      cmd: '%NODE% %ROOT%/config/enc-mkv.js'
+    - name: JLSE
+      cmd: '/bin/bash %ROOT%/config/enc.sh'
       suffix: .mkv
       rate: 4.0
 
