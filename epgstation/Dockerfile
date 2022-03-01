@@ -4,7 +4,7 @@ ENV DOCKER="YES"
 ENV DEV="autoconf automake build-essential cmake git pkg-config texinfo curl wget python python3 libtool nasm yasm gzip gperf uuid-dev gettext autopoint zip ninja-build unzip"
 ENV V_ALSA="1.1.9"
 
-COPY ./logo.zip /tmp
+#COPY ./logo.zip /tmp
 COPY ./cutass.cpp /tmp
 
 RUN apt-get update && \
@@ -186,8 +186,6 @@ RUN mkdir -p ~/ffmpeg_sources && \
     cd JoinLogoScpTrialSetLinux/modules/chapter_exe/src && \
     make -j"$(nproc)" && \
     cd && cp JoinLogoScpTrialSetLinux/modules/chapter_exe/src/chapter_exe JoinLogoScpTrialSetLinux/modules/join_logo_scp_trial/bin/chapter_exe && \
-    cd JoinLogoScpTrialSetLinux/modules/join_logo_scp_trial && \
-    cd logo && unzip /tmp/logo.zip && cd && \
     cd JoinLogoScpTrialSetLinux/modules/join_logo_scp_trial && \
     npm install && \
     npm link && \
