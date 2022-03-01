@@ -42,6 +42,7 @@ services:
             - ./epgstation/data:/usr/local/EPGStation/data
             - ./epgstation/thumbnail:/usr/local/EPGStation/thumbnail
             - ./epgstation/logs:/usr/local/EPGStation/logs
+            - ./epgstation/logo:/root/JoinLogoScpTrialSetLinux/modules/join_logo_scp_trial/logo
             - ./recorded:/usr/local/EPGStation/recorded
             - /dev/video10:/dev/video10
             - /dev/video11:/dev/video11
