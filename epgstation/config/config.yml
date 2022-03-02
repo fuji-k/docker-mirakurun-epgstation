@@ -48,10 +48,10 @@ encode:
       cmd: '%NODE% %ROOT%/config/enc.js'
       suffix: .mp4
       rate: 4.0
-    - name: JLSE
-      cmd: '/bin/bash %ROOT%/config/enc.sh'
-      suffix: .mkv
-      rate: 4.0
+#    - name: JLSE
+#      cmd: '/bin/bash %ROOT%/config/enc.sh'
+#      suffix: .mkv
+#      rate: 4.0
 
 urlscheme:
     m2ts:

@@ -4,7 +4,6 @@ docker-mirakurun-epgstationv2-rpi4
 [Mirakurun](https://github.com/Chinachu/Mirakurun) + [EPGStation](https://github.com/l3tnun/EPGStation) の Raspberry Pi4 用 Docker コンテナ
 [ykym氏](https://github.com/ykym/docker-mirakurun-epgstation-rpi)のdocker-mirakurun-epgstation-rpiをrpi4でRPiOS32bit(Raspbian GNU/Linux 11 (bullseye))を利用しPLEX PX-W3U4に固定し最新版のmirakurun、epgstationv2を登録できるようにしてみました。
 今回test版ですがAmatsukaze連携のモジュールを組み込んであります。epgstation/config/qsvenc.shを環境に即して適宜修正して頂ければエンコードを他の端末のAmatsukazeに投げる事が可能となっています。
-またJoinLogoScpTrialSetLinuxを導入しました。lgdファイル群を適宜設置してからエンコード時JLSEを選択する事で自動ＣＭカットが可能となります。
 
 ## 構築例
 
@@ -126,5 +125,3 @@ sudo mount -a
 ```
 sudo docker-compose up -d
 ```
-### lgdファイルの用意
-epgstation/logoにAmatsukaze等で解析済みのlgdファイルを置く事で自力でJoin_Logo_Scpを利用する事が可能になります。解析時間含め出来上がりは実時間のおよそ2.5倍かかりますが精度の高いCMカットが可能となります。lgdファイルの生成等はここでは触れません。
