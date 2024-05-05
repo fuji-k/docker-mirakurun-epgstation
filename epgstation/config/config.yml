@@ -1,21 +1,16 @@
 port: 8888
-mirakurunPath: 'http://mirakurun:40772/'
+mirakurunPath: 'http://192.168.1.9:40772/'
 
-dbtype: sqlite
-sqlite:
-   extensions:
-     - '/usr/local/EPGStation/regexp.so'
-   regexp: true
-
-# dbtype: mysql
-# mysql:
-#     host: 192.168.xx.xx
-#     port: 3306
-#     user: epgstation
-#     password: epgstation
-#     database: epgstation
+dbtype: mysql
+mysql:
+    host: 192.168.1.4
+    port: 3306
+    user: epgstation
+    password: epgstation
+    database: epgstation
 
 epgUpdateIntervalTime: 10
+timeSpecifiedStartMargin: 15
 
 conflictPriority: 1
 recPriority: 2
@@ -40,18 +35,10 @@ dropLog: '%ROOT%/recorded/droplog'
 encodeProcessNum: 4
 concurrentEncodeNum: 1
 encode:
-    - name: amatsukaze
-      cmd: '/bin/bash %ROOT%/config/qsvenc.sh'
-      suffix: .mkv
-      rate: 4.0
     - name: MP4
       cmd: '%NODE% %ROOT%/config/enc.js'
       suffix: .mp4
       rate: 4.0
-#    - name: JLSE
-#      cmd: '/bin/bash %ROOT%/config/enc.sh'
-#      suffix: .mkv
-#      rate: 4.0
 
 urlscheme:
     m2ts:

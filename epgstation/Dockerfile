@@ -1,4 +1,4 @@
-FROM node:16-buster-slim
+FROM node:18-buster-slim
 EXPOSE 8888
 ENV DOCKER="YES"
 ENV DEV="autoconf automake build-essential cmake git pkg-config texinfo curl wget python python3 libtool nasm yasm gzip gperf uuid-dev gettext autopoint zip ninja-build unzip"
@@ -209,30 +209,12 @@ RUN mkdir -p ~/ffmpeg_sources && \
     npm run all-install && \
     npm run build && \
 \
-# SQLite regex
-\
-    wget -O /tmp/sqlite-amalgamation-3270200.zip https://www.sqlite.org/2019/sqlite-amalgamation-3270200.zip && \
-    wget -O /tmp/sqlite-src-3270200.zip https://www.sqlite.org/2019/sqlite-src-3270200.zip && \
-    unzip /tmp/sqlite-amalgamation-3270200.zip -d /tmp/ && \
-    unzip /tmp/sqlite-src-3270200.zip -d /tmp/ && \
-    cp /tmp/sqlite-src-3270200/ext/misc/regexp.c /tmp/sqlite-amalgamation-3270200 && \
-    cd /tmp/sqlite-amalgamation-3270200 && \
-    gcc -g -fPIC -shared regexp.c -o regexp.so && \
-    cp regexp.so /usr/local/EPGStation/ && \
-    cd /usr/local/EPGStation && \
-\
 # cutass build
 \
     cd /tmp && \
     g++ -o cutass cutass.cpp && \
     cp cutass /usr/local/bin && \
-    chmod a+x /usr/local/bin/cutass && \
-\
-# download Amatsukaze
-\
-    cd /usr/local/ && \
-    wget https://github.com/nekopanda/Amatsukaze/releases/download/0.9.1.4/Amatsukaze_0.9.1.4.7z && \
-    7z x Amatsukaze_0.9.1.4.7z
+    chmod a+x /usr/local/bin/cutass
 
 WORKDIR /usr/local/EPGStation
 
