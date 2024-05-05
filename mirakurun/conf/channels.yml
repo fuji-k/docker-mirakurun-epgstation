@@ -1,254 +1,72 @@
-- name: ＮＨＫ総合１・東京
-  type: GR
-  channel: '27'
-
-- name: 日テレ１
-  type: GR
-  channel: '25'
-
-- name: ＴＢＳ１
-  type: GR
-  channel: '22'
-
-- name: フジテレビ
-  type: GR
-  channel: '21'
-
-- name: テレビ朝日
-  type: GR
-  channel: '24'
-
-- name: テレビ東京１
-  type: GR
-  channel: '23'
-
-- name: ＴＯＫＹＯ　ＭＸ１
-  type: GR
-  channel: '16'
-
 - name: Ｊ：ＣＯＭテレビ
   type: GR
   channel: '13'
-
-- name: ｔｖｋ１
+  isDisabled: false
+- name: ＴＯＫＹＯ　ＭＸ１
+  type: GR
+  channel: '16'
+- name: ｔｖｋ
   type: GR
   channel: '18'
-
-- name: Ｊ：ＣＯＭチャンネル
+  isDisabled: false
+- name: フジテレビ
   type: GR
-  channel: '37'
-
+  channel: '21'
+- name: ＴＢＳ１
+  type: GR
+  channel: '22'
+- name: テレビ東京１
+  type: GR
+  channel: '23'
+- name: テレビ朝日
+  type: GR
+  channel: '24'
+- name: 日テレ１
+  type: GR
+  channel: '25'
 - name: ＮＨＫＥテレ１東京
   type: GR
   channel: '26'
-
-- name: ＮＨＫＢＳ１
+- name: ＮＨＫ総合１・東京
+  type: GR
+  channel: '27'
+- name: ｔｖｋ１
+  type: GR
+  channel: '32'
+  isDisabled: false
+- name: テレ玉
+  type: GR
+  channel: '33'
+  isDisabled: false
+- name: BS朝日
   type: BS
-  channel: 'BS15_0'
-  serviceId: 101
-
-- name: ＮＨＫＢＳ１
-  type: BS
-  channel: 'BS15_0'
-  serviceId: 102
-
-- name: ＮＨＫＢＳプレミアム
-  type: BS
-  channel: 'BS3_1'
-  serviceId: 103
-
-- name: ＮＨＫＢＳプレミアム
-  type: BS
-  channel: 'BS3_1'
-  serviceId: 104
-
-- name: ＢＳ日テレ
-  type: BS
-  channel: 'BS13_0'
-  serviceId: 141
-
-- name: ＢＳ日テレ
-  type: BS
-  channel: 'BS13_0'
-  serviceId: 142
-
-- name: ＢＳ日テレ
-  type: BS
-  channel: 'BS13_0'
-  serviceId: 143
-
-- name: ＢＳ朝日１
-  type: BS
-  channel: 'BS1_0'
+  channel: BS01_0
   serviceId: 151
-
-- name: ＢＳ朝日２
+- name: BS-TBS
   type: BS
-  channel: 'BS1_0'
-  serviceId: 152
-
-- name: ＢＳ朝日３
-  type: BS
-  channel: 'BS1_0'
-  serviceId: 153
-
-- name: ＢＳ－ＴＢＳ
-  type: BS
-  channel: 'BS1_1'
+  channel: BS01_1
   serviceId: 161
-
-- name: ＢＳ－ＴＢＳ
+- name: BSテレ東
   type: BS
-  channel: 'BS1_1'
-  serviceId: 162
-
-- name: ＢＳ－ＴＢＳ
-  type: BS
-  channel: 'BS1_1'
-  serviceId: 163
-
-- name: ＢＳテレ東
-  type: BS
-  channel: 'BS1_2'
+  channel: BS01_2
   serviceId: 171
-
-- name: ＢＳテレ東２
+- name: NHK BSプレミアム
   type: BS
-  channel: 'BS1_2'
-  serviceId: 172
-
-- name: ＢＳテレ東３
+  channel: BS03_1
+  serviceId: 103
+- name: BS11
   type: BS
-  channel: 'BS1_2'
-  serviceId: 173
-
-- name: ＢＳフジ・１８１
-  type: BS
-  channel: 'BS13_1'
-  serviceId: 181
-
-- name: ＢＳフジ・１８２
-  type: BS
-  channel: 'BS13_1'
-  serviceId: 182
-
-- name: ＢＳフジ・１８３
-  type: BS
-  channel: 'BS13_1'
-  serviceId: 183
-
-- name: ＷＯＷＯＷプライム
-  type: BS
-  channel: 'BS3_0'
-  serviceId: 191
-
-- name: ＷＯＷＯＷライブ
-  type: BS
-  channel: 'BS5_0'
-  serviceId: 192
-
-- name: ＷＯＷＯＷシネマ
-  type: BS
-  channel: 'BS5_1'
-  serviceId: 193
-
-- name: スターチャンネル１
-  type: BS
-  channel: 'BS9_1'
-  serviceId: 200
-
-- name: スターチャンネル２
-  type: BS
-  channel: 'BS15_1'
-  serviceId: 201
-
-- name: スターチャンネル３
-  type: BS
-  channel: 'BS15_1'
-  serviceId: 202
-
-- name: ＢＳ１１イレブン
-  type: BS
-  channel: 'BS9_0'
+  channel: BS09_0
   serviceId: 211
-
-- name: ＢＳ１２トゥエルビ
+- name: BS日テレ
   type: BS
-  channel: 'BS9_2'
-  serviceId: 222
-
-- name: 放送大学ｅｘ
+  channel: BS13_0
+  serviceId: 141
+- name: BSフジ
   type: BS
-  channel: 'BS11_2'
-  serviceId: 231
-
-- name: 放送大学ｏｎ
+  channel: BS13_1
+  serviceId: 181
+- name: NHK BS1
   type: BS
-  channel: 'BS11_2'
-  serviceId: 232
-
-- name: グリーンチャンネル
-  type: BS
-  channel: 'BS21_2'
-  serviceId: 234
-
-- name: ＢＳアニマックス
-  type: BS
-  channel: 'BS13_2'
-  serviceId: 236
-
-- name: ＢＳスカパー！
-  type: BS
-  channel: 'BS11_1'
-  serviceId: 241
-
-- name: Ｊ　ＳＰＯＲＴＳ　１
-  type: BS
-  channel: 'BS19_1'
-  serviceId: 242
-
-- name: Ｊ　ＳＰＯＲＴＳ　２
-  type: BS
-  channel: 'BS19_2'
-  serviceId: 243
-
-- name: Ｊ　ＳＰＯＲＴＳ　３
-  type: BS
-  channel: 'BS19_3'
-  serviceId: 244
-
-- name: Ｊ　ＳＰＯＲＴＳ　４
-  type: BS
-  channel: 'BS19_0'
-  serviceId: 245
-
-- name: ＢＳ釣りビジョン
-  type: BS
-  channel: 'BS11_3'
-  serviceId: 251
-
-- name: ＷＯＷＯＷプラス
-  type: BS
-  channel: 'BS21_0'
-  serviceId: 252
-
-- name: 日本映画専門ｃｈ
-  type: BS
-  channel: 'BS21_1'
-  serviceId: 255
-
-- name: ディズニーｃｈ
-  type: BS
-  channel: 'BS23_0'
-  serviceId: 256
-
-- name: 放送大学ラジオ
-  type: BS
-  channel: 'BS11_2'
-  serviceId: 531
-
-- name: スカパー！ガイド
-  type: BS
-  channel: 'BS11_1'
-  serviceId: 840
-
+  channel: BS15_0
+  serviceId: 101

@@ -1,5 +1,5 @@
 #FROM wiz98/ubu_tz:latest
-FROM node:16-buster-slim
+FROM node:18-buster-slim
 EXPOSE 40772
 ENV DOCKER="YES"
 ENV DEV="libpcsclite-dev build-essential curl libssl-dev yasm libtool autoconf pkg-config gcc git g++ make automake"
